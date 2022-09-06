@@ -1,0 +1,108 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMLopd69ZewgfKT6nevpTJO",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/JodyCodes/github-slideshow/blob/master/make_withdrawal\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kmdo3Dvnk-EH",
+        "outputId": "81c62839-bc31-4e7e-b7a2-4b3704b33aad"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Guido van Rossum\n",
+            "Monty Python\n"
+          ]
+        }
+      ],
+      "source": [
+        "class User:\n",
+        "    def __init__(self, username, email_address):# now our method has 2 parameters!\n",
+        "        self.name = username\t\t\t# and we use the values passed in to set the name attribute\n",
+        "        self.email = email_address\t\t# and the email attribute\n",
+        "        self.account_balance = 0\t\t# the account balance is set to $0, so no need for a third parameter\n",
+        "\n",
+        "\n",
+        "guido = User(\"Guido van Rossum\", \"guido@python.com\")\n",
+        "monty = User(\"Monty Python\", \"monty@python.com\")\n",
+        "\n",
+        "print(guido.name)\t# output: Guido van Rossum\n",
+        "print(monty.name)\t# output: Monty Python\n",
+        "\n",
+        "\n",
+        "\n",
+        "#make_withdrawal(self, amount) - have this method decrease the user's balance by the amount specified"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class User:\t\t# here's what we have so far\n",
+        "    def __init__(self, name, email):\n",
+        "        self.name = name\n",
+        "        self.email = email\n",
+        "        self.account_balance = 500\n",
+        "    # adding the deposit method\n",
+        "    def make_withdrawal(self, amount):\t# takes an argument that is the amount of the deposit\n",
+        "    \tself.account_balance += amount\t# the specific user's account increases by the amount of the value received\n",
+        "\n",
+        "guido = User(\"Guido van Rossum\", \"guido@python.com\")\n",
+        "monty = User(\"Monty Python\", \"monty@python.com\")\n",
+        "\n",
+        "guido.make_withdrawal(-100)\n",
+        "monty.make_withdrawal(-50)\n",
+        "print(guido.account_balance)\t# output: 300\n",
+        "print(monty.account_balance)\t# output: 50"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "o6K-aXPRJXlJ",
+        "outputId": "332ddd80-a5f3-4ed0-b867-0a44de40f470"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "400\n",
+            "450\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
